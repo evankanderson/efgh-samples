@@ -15,7 +15,7 @@ type MyData struct {
 	ANumber int64  `json:"a_number,omitempty"`
 }
 
-// Exported function.
+// HandleEvent logs data from the CloudEvents context and data payload.
 func HandleEvent(ctx context.Context, data MyData) error {
 	cex, ok := efgh.CloudEvent(ctx)
 	if !ok {
