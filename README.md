@@ -16,3 +16,10 @@ curl -v -H "CE-EventID: 313373" \
   -d "{\"a_field\": \"Blaa\", \"a_number\": 4321}" \
   http://localhost:8080
 ```
+
+The library also supports the structured event HTTP transport:
+```shell
+curl -v -H "Content-Type: application/cloudevents+json" \
+  -d "{\"eventID\": \"313373\", \"eventTime\": \"2018-05-21T22:14:11Z\", \"data\": {\"a_field\": \"Blaa\", \"a_number\": 4321}}" \
+   http://localhost:8080
+```
